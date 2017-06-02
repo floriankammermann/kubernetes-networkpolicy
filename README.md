@@ -40,4 +40,4 @@ Isolate namespaces on network level. The pod's from namespace team0 should not h
 ## add pod with different label
 
 1. `kubectl run busybox99 --rm -ti --namespace=team0 --labels="team=team99" --image=busybox /bin/sh`
-    1. the jenkins of team0 is reachable from this container, which shouldn't be the case.
+    1. the jenkins of team0 is reachable from this container with the command `wget <internal IP>:8080`, which shouldn't be the case.
