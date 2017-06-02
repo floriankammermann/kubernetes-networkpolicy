@@ -5,6 +5,7 @@ metadata:
   namespace: team0
   labels:
     serv: jenkins-team0
+    team: team0
 spec:
   type: NodePort
   ports:

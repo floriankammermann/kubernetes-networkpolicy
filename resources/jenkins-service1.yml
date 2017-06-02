@@ -3,6 +3,9 @@ kind: Service
 metadata:
   name: jenkins-team1-service
   namespace: team1
+  labels:
+    serv: jenkins-team1
+    team: team1
 spec:
   type: NodePort
   ports:
