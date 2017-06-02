@@ -19,7 +19,7 @@ Isolate namespaces on network level. The pod's from namespace team0 should not h
 1. setup https://github.com/projectcalico/canal
     1. `kubectl apply -f https://raw.githubusercontent.com/projectcalico/canal/master/k8s-install/1.6/rbac.yaml`
     1. `kubectl apply -f https://raw.githubusercontent.com/projectcalico/canal/master/k8s-install/1.6/canal.yaml`
-    kubectl annotate ns team0 "net.beta.kubernetes.io/network-policy={\"ingress\": {\"isolation\": \"DefaultDeny\"}}"
+    
 ## setup resources
 
 1. `kubectl create ns team0`
