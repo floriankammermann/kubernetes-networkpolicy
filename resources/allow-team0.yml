@@ -1,0 +1,17 @@
+kind: NetworkPolicy
+apiVersion: extensions/v1beta1
+metadata:
+  name: allow-team0
+  namespace: team0
+spec:
+  podSelector:            
+    matchLabels:
+      team: team0 
+  ingress:
+    - from:              
+      - podSelector:
+          matchLabels:
+            team: team0
+    - ports:
+      - protocol: TCP
+        port: 8080 

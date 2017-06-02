@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins-team1
+  namespace: team1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins-team1
+        team: team1
+    spec:
+      containers:
+      - name: jenkins
+        image: jenkins:2.32.2
+        ports:
+        - containerPort: 8080
