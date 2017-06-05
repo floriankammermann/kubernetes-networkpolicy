@@ -12,6 +12,6 @@ spec:
       - podSelector:
           matchLabels:
             team: team0
-    - ports:
+      ports:
       - protocol: TCP
         port: 8080 
