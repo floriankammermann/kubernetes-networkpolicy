@@ -36,8 +36,14 @@ Isolate namespaces on network level. The pod's from namespace team0 should not h
     1. at this point the jenkins container of team1 cannot reach the jenkins container of team0 and the services are not accessible over the NodePort
 1. `kubectl create -f allow-team0.yml`
     1. at this point the jenkins container of team1 cannot reach the jenkins container of team0 with the command `wget <internal IP>:8080` 
+    1. both jenkins are accessible over the NodePort 
     
 ## add pod with different label
 
 1. `kubectl run busybox99 --rm -ti --namespace=team0 --labels="team=team99" --image=busybox /bin/sh`
     1. the jenkins of team0 is not reachable on port 8080
+
+## add pod with same label
+
+1. `kubectl run busybox99 --rm -ti --namespace=team0 --labels="team=team0" --image=busybox /bin/sh`
+    1. the jenkins of team0 is reachable on port 8080
